@@ -1,8 +1,6 @@
 name: release-test
 on:
   push:
-    branches:
-      - "Meta"
     tags:
       - "v*"
 jobs:
