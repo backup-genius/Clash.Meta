@@ -42,12 +42,7 @@ jobs:
           tag: beta
           deleteOnlyFromDrafts: false
 
-      - name: Tag Repo
-        uses: richardsimko/update-tag@v1
-        with:
-          tag_name: beta
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
 
       - name: Upload Alpha
         uses: softprops/action-gh-release@v1
