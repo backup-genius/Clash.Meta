@@ -1,4 +1,4 @@
-name: alpha
+name: prerelease
 on:
   push:
     branches:
