@@ -1,6 +1,8 @@
-name: alpha
+name: release-test
 on:
   push:
+    branches:
+      - "Meta"
     tags:
       - "v*"
 jobs:
@@ -27,7 +29,7 @@ jobs:
             ${{ runner.os }}-go-
       - name: Test
         run: |
-          go test ./..
+          go test ./...
       - name: Build
         if: success()
         env:

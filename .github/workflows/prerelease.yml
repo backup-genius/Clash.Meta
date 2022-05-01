@@ -1,4 +1,4 @@
-name: prerelease
+name: prerelease-test
 on:
   push:
     branches:
@@ -34,7 +34,7 @@ jobs:
       - name: Test
         if: ${{env.GITHUB_REF_NAME=='Beta'}}
         run: |
-          go test ./..
+          go test ./...
       - name: Build
         if: success()
         env:
@@ -61,7 +61,7 @@ jobs:
         if: ${{  success() }}
         with:
           tag: ${{env.GITHUB_REF_NAME}}
-          tag_name: alpha
+          tag_name: ${{env.GITHUB_REF_NAME}}
           files: bin/*
           prerelease: true
           generate_release_notes: true
