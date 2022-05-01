@@ -1,6 +1,11 @@
 name: Docker
 
-on: [push]
+on:
+  push:
+    branches:
+      - Beta
+    tags:
+      - "v*"
 
 env:
   REGISTRY: docker.io
@@ -23,6 +28,8 @@ jobs:
 
       - name: Setup Docker buildx
         uses: docker/setup-buildx-action@v1
+        with:
+          version: latest
 
       # Extract metadata (tags, labels) for Docker
       # https://github.com/docker/metadata-action

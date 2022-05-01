@@ -52,7 +52,7 @@ all:linux-amd64 linux-arm64\
  	windows-amd64 windows-arm64\
 
 docker:
-	$(GOBUILD) -o $(BINDIR)/$(NAME)-$@
+	GOAMD64=v3 $(GOBUILD) -o $(BINDIR)/$(NAME)-$@
 
 darwin-amd64v3:
 	GOARCH=amd64 GOOS=darwin GOAMD64=v3 $(GOBUILD) -o $(BINDIR)/$(NAME)-$@
