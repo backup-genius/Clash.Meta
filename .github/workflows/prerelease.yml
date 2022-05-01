@@ -1,4 +1,4 @@
-name: prerelease-test
+name: prerelease
 on:
   push:
     branches:
