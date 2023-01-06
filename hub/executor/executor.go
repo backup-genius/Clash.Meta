@@ -309,7 +309,7 @@ func updateTunnels(tunnels []LC.Tunnel) {
 
 func updateGeneral(general *config.General, force bool) {
 	tunnel.SetMode(general.Mode)
-	tunnel.SetFindProcessMode(general.EnableProcess, general.FindProcessMode)
+	tunnel.SetAlwaysFindProcess(general.EnableProcess)
 	dialer.DisableIPv6 = !general.IPv6
 	if !dialer.DisableIPv6 {
 		log.Infoln("Use IPv6")
